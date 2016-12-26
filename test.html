@@ -1,0 +1,81 @@
+<! doctype html>
+<html>
+    
+    
+    <head>
+    
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script src="jquery-3.1.1.js"></script>
+    </head>
+
+    <body>
+        <div class="sections">
+            <div class="color center" style="background-color:yellow;"> <img class="shake" src="img/mobile-phone-vibrating%20(1).png"></div>
+        </div>
+        
+        <div class="sections">
+            <div class="changes center color" style="background-color:red"></div>
+            <div class="changes center color" style="background-color:yellow"></div>
+            <div class="changes center color" style="background-color:green"></div>
+        </div>
+        
+        <div class="detect">
+            <div class="color" id="inactive" style="background-color:yellow;"></div>
+        
+        </div>
+        
+        <div class="sections fade">
+            <div class="color center " style="background-color:yellow"></div>
+        </div>
+        
+        
+        <script>(function() {
+
+    var changes = $(".changes");
+    var changeIndex = -1;
+
+    function showNextChange() {
+        ++changeIndex;
+        changes.eq(changeIndex % changes.length)
+            .fadeIn(2000)
+            .delay(2000)
+            .fadeOut(2000, showNextChange);
+    }
+
+    showNextChange();
+
+            })();</script>
+        
+        <script>
+ var target = $(".detect").offset().top;
+
+
+var interval = setInterval(function() {
+    if ($(window).scrollTop() >= target) {
+        document.getElementById('inactive').id = 'slide';
+        clearInterval(interval);
+    }
+}, 150);
+    </script> 
+        
+        <script>
+        
+            $(window).scroll(function () {
+    console.log($(window).scrollTop());
+    var topDivHeight = $(".detect").height();
+    var viewPortSize = $(window).height();
+    
+    var triggerAt = 1700;
+    var triggerHeight = (topDivHeight - viewPortSize) + triggerAt;
+
+    if ($(window).scrollTop() >= triggerHeight) {
+        $('.fade').css('visibility', 'visible').hide().fadeIn();
+        $(this).off('scroll');
+    }
+});
+        </script>
+    </body>
+
+
+</html>
+
