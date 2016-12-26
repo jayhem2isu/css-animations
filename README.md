@@ -23,3 +23,5 @@ It fades in an element when it is scrolled into the viewport. Link the css and j
 fade element to 'fade' and the class of the element directly above it to 'detect'. This should work.
 
 All but the shake animation are dependent on jquery so link that to the page as well. 
+
+Check the test.html file to see all the animations in action
