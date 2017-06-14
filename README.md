@@ -24,4 +24,4 @@ fade element to 'fade' and the class of the element directly above it to 'detect
 
 All but the shake animation are dependent on jquery so link that to the page as well. 
 
-Check the test.html file to see all the animations in action
+You can see the animations working <a href="https://jayhem2isu.github.io/css-animations/">here</a>
